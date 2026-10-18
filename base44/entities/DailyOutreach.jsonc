@@ -1,0 +1,36 @@
+{
+  "name": "DailyOutreach",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "YYYY-MM-DD"
+    },
+    "count": {
+      "type": "number",
+      "default": 0
+    },
+    "target": {
+      "type": "number",
+      "default": 10
+    },
+    "userId": {
+      "type": "string",
+      "description": "Owner user id"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,473 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ---------- shadcn tokens (light) ---------- */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 1.125rem;
+    --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  /* ---------- shadcn tokens (dark) ---------- */
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+/* ============================================================
+   APP THEMES
+   Every theme sets the same variables. Text colours are chosen so
+   body copy clears 4.5:1 and large numbers / icons clear 3:1 against
+   both the page background and each of that theme's four card colours.
+   ============================================================ */
+
+/* ---------- 1. Classic (default light) ---------- */
+:root,
+html[data-theme="classic"] {
+  --app-bg: #FAF6EE;
+  --card-1: #F6C9D8;
+  --card-2: #F4D35E;
+  --card-3: #B7E4C7;
+  --card-4: #D4C1EC;
+  --text-primary: #2B2B2B;
+  --text-secondary: #5C5650;
+  --card-ink: #2B2B2B;
+  --card-ink-soft: #4F4F4F;
+  --app-accent: #FF6B4A;
+  --app-accent-soft: #FFE3DB;
+  --accent-ink: #C43D1E;
+  --surface: #FFFFFF;
+  --surface-border: #ECE4D6;
+  --on-accent: #FFFFFF;
+  --decor-ink: #6E9A72;
+}
+
+/* ---------- 2. Midnight (dark) ---------- */
+html[data-theme="midnight"] {
+  --app-bg: #1E1B26;
+  --card-1: #4A2E38;
+  --card-2: #4A3F1E;
+  --card-3: #22392C;
+  --card-4: #332A47;
+  --text-primary: #F5F0E8;
+  --text-secondary: #B8B0C4;
+  --card-ink: #F5F0E8;
+  --card-ink-soft: #B8B0C4;
+  --app-accent: #FF8266;
+  --app-accent-soft: #3A2A2A;
+  --accent-ink: #FF8266;
+  --surface: #2A2633;
+  --surface-border: #3A3447;
+  --on-accent: #FFFFFF;
+  --decor-ink: #8E86A8;
+}
+
+/* ---------- 3. Forest ---------- */
+html[data-theme="forest"] {
+  --app-bg: #E9F3E6;
+  --card-1: #C6E7BC;
+  --card-2: #E9E2A8;
+  --card-3: #A9D8A0;
+  --card-4: #D9EDD0;
+  --text-primary: #17321C;
+  --text-secondary: #3F6B48;
+  --card-ink: #17321C;
+  --card-ink-soft: #3F6B48;
+  --app-accent: #2F7D4A;
+  --app-accent-soft: #DCEEDB;
+  --accent-ink: #256B3D;
+  --surface: #FFFFFF;
+  --surface-border: #D3E6CB;
+  --on-accent: #FFFFFF;
+  --decor-ink: #5B9A63;
+}
+
+/* ---------- 4. Glacier ---------- */
+html[data-theme="glacier"] {
+  --app-bg: #EAF6FB;
+  --card-1: #C9E9F6;
+  --card-2: #DFF4FB;
+  --card-3: #B8E2F2;
+  --card-4: #D6EEF9;
+  --text-primary: #0F2F40;
+  --text-secondary: #2C5C74;
+  --card-ink: #0F2F40;
+  --card-ink-soft: #2C5C74;
+  --app-accent: #2A8CC4;
+  --app-accent-soft: #D9EFFA;
+  --accent-ink: #1A6A99;
+  --surface: #FFFFFF;
+  --surface-border: #CDE7F2;
+  --on-accent: #FFFFFF;
+  --decor-ink: #7FC3E4;
+}
+
+/* ---------- 5. Sand ---------- */
+html[data-theme="sand"] {
+  --app-bg: #FBF3E4;
+  --card-1: #F3D9B1;
+  --card-2: #F6E6A8;
+  --card-3: #E9C9A0;
+  --card-4: #F5E0C6;
+  --text-primary: #3B2A1A;
+  --text-secondary: #6B4E2E;
+  --card-ink: #3B2A1A;
+  --card-ink-soft: #6B4E2E;
+  --app-accent: #C7742B;
+  --app-accent-soft: #F7E5CE;
+  --accent-ink: #8F5117;
+  --surface: #FFFDF8;
+  --surface-border: #EADCC2;
+  --on-accent: #FFFFFF;
+  --decor-ink: #D9A55F;
+}
+
+/* ---------- 6. Space (dark) ---------- */
+html[data-theme="space"] {
+  --app-bg: #0E0B1F;
+  --card-1: #2A1F4A;
+  --card-2: #3A2C5E;
+  --card-3: #23305E;
+  --card-4: #33214F;
+  --text-primary: #EDE9FF;
+  --text-secondary: #B4A9D6;
+  --card-ink: #EDE9FF;
+  --card-ink-soft: #B4A9D6;
+  --app-accent: #A78BFA;
+  --app-accent-soft: #2A2148;
+  --accent-ink: #C9B6FF;
+  --surface: #1B1633;
+  --surface-border: #2C2450;
+  --on-accent: #FFFFFF;
+  --decor-ink: #CBBDFF;
+}
+
+/* ---------- 7. Anime ---------- */
+html[data-theme="anime"] {
+  --app-bg: #FFF0F6;
+  --card-1: #FFC2DA;
+  --card-2: #FFE08A;
+  --card-3: #BDE7FF;
+  --card-4: #E3C9FF;
+  --text-primary: #3A1830;
+  --text-secondary: #8A3F63;
+  --card-ink: #3A1830;
+  --card-ink-soft: #8A3F63;
+  --app-accent: #FF4F9A;
+  --app-accent-soft: #FFD9E8;
+  --accent-ink: #B81A61;
+  --surface: #FFFFFF;
+  --surface-border: #FBD3E4;
+  --on-accent: #FFFFFF;
+  --decor-ink: #FF9EC4;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply font-body;
+    background-color: var(--app-bg);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+  }
+
+  /* A theme swap repaints the palette variables, so themed surfaces ease into
+     their new colours instead of snapping. Tailwind's own transition utilities
+     are more specific and keep hover feedback snappy. */
+  body, div, header, nav, main, section, article, aside, footer,
+  ul, li, p, span, h1, h2, h3, h4, h5, h6, a, button, input, textarea, select, label {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+  }
+}
+
+@layer utilities {
+  .font-heading { font-family: var(--font-heading); }
+  .font-display { font-family: var(--font-display); }
+
+  .text-pri { color: var(--text-primary); }
+  .text-sec { color: var(--text-secondary); }
+  .text-accent-ink { color: var(--accent-ink); }
+  .text-card-ink { color: var(--card-ink); }
+  .text-card-ink-soft { color: var(--card-ink-soft); }
+  .bg-app { background-color: var(--app-bg); }
+  .bg-surface { background-color: var(--surface); }
+  .border-surface { border-color: var(--surface-border); }
+  .bg-accent { background-color: var(--app-accent); }
+  .text-accent { color: var(--app-accent); }
+  .text-on-accent { color: var(--on-accent); }
+  .bg-accent-soft { background-color: var(--app-accent-soft); }
+
+  /* Translucent variants. The plain declaration is a fallback for browsers
+     without color-mix support. */
+  .bg-app-blur {
+    background-color: var(--app-bg);
+    background-color: color-mix(in srgb, var(--app-bg) 82%, transparent);
+  }
+  .text-pri-soft {
+    color: var(--text-primary);
+    color: color-mix(in srgb, var(--text-primary) 80%, transparent);
+  }
+  .text-sec-soft {
+    color: var(--text-secondary);
+    color: color-mix(in srgb, var(--text-secondary) 72%, transparent);
+  }
+
+  .card-shadow { box-shadow: 0 6px 20px -8px rgba(43, 43, 43, 0.18), 0 2px 6px -4px rgba(43,43,43,0.12); }
+  .dark .card-shadow { box-shadow: 0 6px 24px -10px rgba(0,0,0,0.55), 0 2px 8px -6px rgba(0,0,0,0.4); }
+
+  /* ---------- motion ---------- */
+  .pet-breathe { animation: petBreathe 3.2s ease-in-out infinite; }
+  .pet-pop { animation: petPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .streak-pulse { animation: streakPulse 0.7s ease-out; }
+  .check-pop { animation: checkPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .bubble-in { animation: bubbleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .fade-in { animation: fadeIn 0.3s ease-out; }
+  .slide-up { animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+
+  .flame-flicker { animation: flameFlicker 1.7s ease-in-out infinite; transform-origin: center bottom; }
+  .arrow-bounce { animation: arrowBounce 1.7s ease-in-out infinite; }
+  .theme-icon-in { animation: themeIconIn 0.35s ease-out; }
+
+  /* ---------- per-theme streak + outreach icon motion ---------- */
+  .icon-leaf-sway { animation: leafSway 3s ease-in-out infinite; transform-origin: 50% 90%; }
+  .icon-tree-sway { animation: treeSway 3.4s ease-in-out infinite; transform-origin: 50% 95%; }
+  .icon-snow-spin { animation: snowSpin 12s linear infinite; }
+  .icon-crystal-shimmer { animation: crystalShimmer 3.2s ease-in-out infinite; }
+  .icon-sun-glow { animation: sunGlow 3s ease-in-out infinite; }
+  .icon-moon-sway { animation: moonSway 4s ease-in-out infinite; }
+  .icon-rocket-bob { animation: rocketBob 2.6s ease-in-out infinite; }
+  .icon-sparkle { animation: sparkleTwinkle 2.2s ease-in-out infinite; }
+  .icon-heart-beat { animation: heartBeat 1.9s ease-in-out infinite; }
+
+  /* ---------- decorative layers ---------- */
+  .decor-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .decor-item {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+
+  .leaf-drift { animation: leafDrift linear infinite; }
+  .snow-fall { animation: snowFall linear infinite; }
+  .star-twinkle { animation: starTwinkle ease-in-out infinite; }
+  .shooting-star { animation: shootingStar 26s linear infinite; }
+  .petal-fall { animation: petalFall linear infinite; }
+  .heat-wave { animation: heatWave 9s ease-in-out infinite; }
+}
+
+@keyframes petBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@keyframes petPop {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes streakPulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+@keyframes checkPop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+@keyframes bubbleIn {
+  0% { transform: scale(0.6) translateY(6px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.07) rotate(-3deg); }
+  50% { transform: scale(1.03) rotate(2deg); }
+  75% { transform: scale(1.1) rotate(-2deg); }
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes themeIconIn {
+  from { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+  to { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+/* Forest */
+@keyframes leafSway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+@keyframes treeSway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes leafDrift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  12% { opacity: 0.85; }
+  100% { transform: translate3d(var(--drift-x, 14px), 96px, 0) rotate(var(--drift-r, 200deg)); opacity: 0; }
+}
+
+/* Glacier */
+@keyframes snowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes crystalShimmer {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes snowFall {
+  0% { transform: translate3d(0, -8vh, 0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate3d(var(--drift-x, 18px), 108vh, 0); opacity: 0; }
+}
+
+/* Sand */
+@keyframes sunGlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes heatWave {
+  0% { transform: translateX(-12%); opacity: 0.25; }
+  50% { opacity: 0.5; }
+  100% { transform: translateX(12%); opacity: 0.25; }
+}
+
+/* Space */
+@keyframes moonSway {
+  0%, 100% { transform: rotate(-7deg); }
+  50% { transform: rotate(7deg); }
+}
+@keyframes rocketBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.75); }
+  50% { opacity: 0.9; transform: scale(1.15); }
+}
+@keyframes shootingStar {
+  0% { transform: translate3d(0, 0, 0) rotate(20deg); opacity: 0; }
+  1% { opacity: 0; }
+  3% { opacity: 1; }
+  8% { transform: translate3d(52vw, 34vh, 0) rotate(20deg); opacity: 0; }
+  100% { transform: translate3d(52vw, 34vh, 0) rotate(20deg); opacity: 0; }
+}
+
+/* Anime */
+@keyframes sparkleTwinkle {
+  0%, 100% { transform: scale(0.9); opacity: 0.65; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  18% { transform: scale(1.14); }
+  36% { transform: scale(1); }
+  54% { transform: scale(1.09); }
+}
+@keyframes petalFall {
+  0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.85; }
+  50% { transform: translate3d(calc(var(--drift-x, 24px) / 2), 50vh, 0) rotate(180deg); }
+  90% { opacity: 0.85; }
+  100% { transform: translate3d(var(--drift-x, 24px), 110vh, 0) rotate(360deg); opacity: 0; }
+}
+
+/* Respect the visitor's motion preference: decorative layers disappear and
+   every looping animation stops, leaving the static icons in place. */
+@media (prefers-reduced-motion: reduce) {
+  .decor-layer { display: none !important; }
+  .pet-breathe,
+  .flame-flicker,
+  .arrow-bounce,
+  .icon-leaf-sway,
+  .icon-tree-sway,
+  .icon-snow-spin,
+  .icon-crystal-shimmer,
+  .icon-sun-glow,
+  .icon-moon-sway,
+  .icon-rocket-bob,
+  .icon-sparkle,
+  .icon-heart-beat,
+  .leaf-drift,
+  .snow-fall,
+  .star-twinkle,
+  .shooting-star,
+  .petal-fall,
+  .heat-wave {
+    animation: none !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface-border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }

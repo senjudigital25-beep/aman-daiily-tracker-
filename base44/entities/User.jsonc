@@ -1,0 +1,27 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "display_name": {
+      "type": "string",
+      "description": "Name shown across the app"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "Profile photo URL"
+    },
+    "onboarded": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether first-run onboarding is complete"
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "description": "Preferred theme for this account"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short task title"
+    },
+    "date": {
+      "type": "string",
+      "description": "YYYY-MM-DD calendar date this task belongs to"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "outreach",
+        "skill",
+        "personal",
+        "content"
+      ]
+    },
+    "time": {
+      "type": "string",
+      "description": "Optional HH:MM time"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "userId": {
+      "type": "string",
+      "description": "Owner user id"
+    }
+  },
+  "required": [
+    "title",
+    "date",
+    "category"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

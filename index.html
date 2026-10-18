@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" href="https://media.base44.com/images/public/6ab2dfb31644c312f89bc86e/ce3e07962_Screenshot2026-08-30at40909PM.png" />
+    <link rel="apple-touch-icon" href="https://media.base44.com/images/public/6ab2dfb31644c312f89bc86e/ce3e07962_Screenshot2026-08-30at40909PM.png" />
+
+    <title>Aman's Daily Tracker | Aman AI Tracker</title>
+    <meta name="description" content="Aman's Daily Tracker is a warm, playful daily task and streak tracker. Plan your day, tick off tasks across outreach, skill, personal and content, and watch your streaks, weekly consistency and progress grow." />
+    <link rel="canonical" href="https://grindamann.base44.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aman's Daily Tracker" />
+    <meta property="og:url" content="https://grindamann.base44.app/" />
+    <meta property="og:title" content="Aman's Daily Tracker | Aman AI Tracker" />
+    <meta property="og:description" content="Aman's Daily Tracker is a warm, playful daily task and streak tracker. Plan your day, tick off tasks across outreach, skill, personal and content, and watch your streaks, weekly consistency and progress grow." />
+    <meta property="og:image" content="https://media.base44.com/images/public/6ab2dfb31644c312f89bc86e/ce3e07962_Screenshot2026-08-30at40909PM.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aman's Daily Tracker | Aman AI Tracker" />
+    <meta name="twitter:description" content="Aman's Daily Tracker is a warm, playful daily task and streak tracker. Plan your day, tick off tasks across outreach, skill, personal and content, and watch your streaks, weekly consistency and progress grow." />
+    <meta name="twitter:image" content="https://media.base44.com/images/public/6ab2dfb31644c312f89bc86e/ce3e07962_Screenshot2026-08-30at40909PM.png" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      // Apply the saved theme before the first paint so dark themes never flash.
+      (function () {
+        try {
+          var LEGACY = { light: 'classic', dark: 'midnight' };
+          var KNOWN = ['classic', 'midnight', 'forest', 'glacier', 'sand', 'space', 'anime'];
+          var key = localStorage.getItem('aman-tracker-theme');
+          key = LEGACY[key] || key;
+          if (KNOWN.indexOf(key) === -1) key = 'classic';
+          var root = document.documentElement;
+          root.setAttribute('data-theme', key);
+          if (key === 'midnight' || key === 'space') root.classList.add('dark');
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
